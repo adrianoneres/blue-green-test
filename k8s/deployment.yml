@@ -15,7 +15,7 @@ spec:
         app: "blue-green-test"
     spec:
       containers:
-      - name: blue-green
+      - name: blue-green-test
         image: "adrianoneres/blue-green-test:blue"
 
 ---
