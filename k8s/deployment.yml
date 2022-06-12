@@ -1,35 +1,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: blue-green
+  name: blue-green-test
   labels:
-    app: blue-green
+    app: blue-green-test
 spec:
   selector:
     matchLabels:
-      app: blue-green
-  replicas: 1
+      app: blue-green-test
+  replicas: 4
   template:
     metadata:
       labels:
-        app: "blue-green"
+        app: "blue-green-test"
     spec:
       containers:
       - name: blue-green
-        image: "adrianoneres/blue-green:blue"
+        image: "adrianoneres/blue-green-test:blue"
 
 ---
 
 apiVersion: v1
 kind: Service
 metadata:
-  name: blue-green-service
+  name: blue-green-test-service
 spec:
   selector:
-    app: blue-green
+    app: blue-green-test
   type: ClusterIP
   ports:
-  - name: blue-green-service
+  - name: blue-green-test-service
     port: 8000
     targetPort: 80
     protocol: TCP
