@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: blue-green-test
-        image: "adrianoneres/blue-green-test:green"
+        image: "adrianoneres/blue-green-test:blue"
 ---
 apiVersion: v1
 kind: Service
